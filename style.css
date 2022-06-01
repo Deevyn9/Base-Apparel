@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Form-Border: hsl(0, 36%, 70%);
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+}
+
+header {
+  padding: 20px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 2px;
+  font-size: 10vw;
+  padding: 40px 80px 10px 80px;
+}
+
+.were {
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+}
+
+.hello {
+  padding: 0 5vw;
+  text-align: center;
+  line-height: 25px;
+  color: var(--Desaturated-Red);
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 20px 0 20px;
+  position: relative;
+}
+
+input {
+  border-radius: 50px;
+  padding: 20px;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--Form-Border);
+}
+
+input::placeholder {
+  color: var(--Desaturated-Red);
+}
+
+.error {
+  height: 20px;
+  position: absolute;
+  top: 30%;
+  right: 25%;
+  display: block;
+  background: url(/images/icon-error.svg) no-repeat;
+}
+
+.input-field button {
+  height: 100%;
+  width: 70px;
+  border-radius: 50px;
+  border: none;
+  position: absolute;
+  right: 0;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  cursor: pointer;
+}
+
+.input-field button:hover {
+  background: hsl(0, 36%, 70%);
+  box-shadow: -3px 2px 50px 3px hsl(0, 1%, 64%);
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+#valid-text {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: red;
+  display: block;
+}
+
+.valid {
+  display: block;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 585px) {
+  h1 {
+    line-height: 70px;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 60vw;
+    background: url(/images/bg-pattern-desktop.svg);
+  }
+
+  .hero {
+    display: none;
+  }
+
+  header {
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 80px;
+  }
+
+  .container {
+    width: 70%;
+  }
+
+  aside {
+    height: 100vh;
+    width: 40vw;
+    background: url(/images/hero-desktop.jpg) no-repeat;
+  }
+
+  h1 {
+    padding: 0 10vw 0 0;
+    text-align: left;
+    font-size: 5vw;
+    line-height: 70px;
+    letter-spacing: 10px;
+    margin: 20px 0;
+  }
+
+  .hello {
+    padding: 0;
+    text-align: left;
+    width: 430px;
+    margin-bottom: 40px;
+  }
+
+  .input-field {
+    width: 75%;
+    margin: 0;
+  }
+
+  .input-field button {
+    width: 85px;
+    transition: all 0.5s ease-in-out;
+  }
+}
