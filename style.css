@@ -59,13 +59,12 @@ input::placeholder {
   color: var(--Desaturated-Red);
 }
 
-.error {
+#error {
   height: 20px;
   position: absolute;
   top: 30%;
-  right: 25%;
-  display: block;
-  background: url(/images/icon-error.svg) no-repeat;
+  right: 80px;
+  visibility: hidden;
 }
 
 .input-field button {
@@ -88,8 +87,9 @@ form {
   margin-bottom: 50px;
 }
 
-#valid-text {
+#error-msg {
   margin-top: 5px;
+  margin-left: 40px;
   font-size: 0.9rem;
   color: red;
   display: block;
@@ -176,5 +176,13 @@ form {
   .input-field button {
     width: 85px;
     transition: all 0.5s ease-in-out;
+  }
+
+  #error {
+    right: 95px;
+  }
+
+  #error-msg {
+    margin-left: 0;
   }
 }

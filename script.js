@@ -1,24 +1,32 @@
-// const errorText = document.getElementsByClassName("error-text");
-// const showValid = document.getElementsByClassName("valid");
+const form = document.getElementById("form");
+const errorMsg = document.getElementById("error-msg");
+const email = document.getElementById("email");
+const submitBtn = document.getElementById("submit-btn");
+const errorImg = document.getElementById("error");
 
-// form.addEventListener("submit", (e) => {
-//
-// });
+submitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  let isValid = email.checkValidity() & (email.value !== "");
+  errorMsg.textContent = isValid ? "" : "Please provide a valid email";
+  errorImg.style.visibility = isValid ? "hidden" : "visible";
+  email.style.borderColor = isValid
+    ? "rgba(206, 151, 151, 0.6)"
+    : "hsl(0, 93%, 68%)";
+  email.value = "";
+});
 
-function validation() {
-  const form = document.getElementById("form");
-  const validText = document.getElementById("valid-text");
-  const email = document.getElementById("email").value;
-  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+email.addEventListener("keydown", function () {
+  errorMsg.textContent = "";
+  errorImg.style.visibility = "hidden";
+  email.style.borderColor = "rgba(206, 151, 151, 0.6)";
+});
 
-  if (email.match(pattern) && email === " ") {
-    form.classList.add("valid");
-    form.classList.remove("invalid");
-    validText.innerHTML = "Valid Email";
-    e.preventDefault();
-  } else {
-    form.classList.add("invalid");
-    form.classList.remove("valid");
-    validText.innerHTML = "Please provide a valid Email";
-  }
-}
+document.addEventListener(
+  "invalid",
+  (function () {
+    return function (e) {
+      e.preventDefault();
+    };
+  })(),
+  true
+);
